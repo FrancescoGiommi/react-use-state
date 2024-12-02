@@ -32,7 +32,9 @@ function App() {
   return (
     <>
       <Header />
-      <Main />
+      <div className="container">
+        <Main />
+      </div>
       <Footer />
     </>
   );
