@@ -21,13 +21,21 @@ Bonus
     Scomporre la card dei dettagli in un componente a parte che mantenga le sue funzionalità */
 
 import { useState } from "react";
-
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return <></>;
+  return (
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
