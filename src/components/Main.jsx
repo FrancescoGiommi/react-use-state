@@ -4,18 +4,25 @@ import Card from "../components/Card";
 
 /* Export Main */
 export default function Main() {
-  const [visible, setVisible] = useState(false);
+  const activeLanguage = languages[0];
+  const [activePost, setActivePost] = useState(activeLanguage);
 
-  const isHidden = true;
-
+  const handleSelectTag = (item) => {
+    const newPost = languages.find((post) => post.title === item);
+    console.log(newPost);
+  };
   return (
     <>
       <main>
         {/* Generate card with Map */}
         {languages.map((item) => (
-          <ul className="d-flex gap-3">
+          <ul className="d-inline-flex gap-2 ">
             <li>
-              <button className="btn btn-primary" key={item.id}>
+              <button
+                className="btn btn-primary "
+                key={item.id}
+                onClick={() => handleSelectTag()}
+              >
                 {item.title}
               </button>
             </li>
@@ -23,16 +30,14 @@ export default function Main() {
         ))}
 
         {/* Generate card with Map */}
-        {languages.map((item, index) => (
-          <div>
-            <Card
-              key={index}
-              title={item.title}
-              description={item.description}
-              onClick={() => "btn" == "language-selected"}
-            />
-          </div>
-        ))}
+
+        <div>
+          <Card
+            key={activePost.id}
+            title={activePost.title}
+            description={activePost.description}
+          />
+        </div>
       </main>
     </>
   );

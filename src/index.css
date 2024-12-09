@@ -8,10 +8,7 @@ h1 {
 
 ul {
   list-style: none;
-}
-
-.language-selected {
-  color: goldenrod;
+  display: flex;
 }
 
 .hidden {
